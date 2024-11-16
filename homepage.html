@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="miniproject.css">
+    <link rel="stylesheet" type="text/css" href="miniproject.js">
+</head>
+<style>
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+/* Navigation Menu */
+
+.nav {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 255, 89, 0.1);
+}
+
+.nav-brand {
+  margin-right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+.nav-profile {
+  position: relative;
+  margin-left: 20px;
+}
+
+.nav-profile-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  padding: 1em;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-profile:hover .nav-profile-links {
+  display: block;
+}
+
+.nav-profile-links a {
+  color: #fff;
+  padding: 10px;
+  display: block;
+  border-bottom: 1px solid #444;
+}
+
+.nav-profile-links a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Main Content Area */
+
+.main-content {
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.widget {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: calc(33.33% - 20px);
+}
+
+.widget h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.widget p {
+  margin-bottom: 10px;
+}
+
+.kpi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.kpi-item {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: calc(33.33% - 20px);
+}
+
+.kpi-item h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.kpi-item p {
+  margin-bottom: 10px;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #23527c;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  clear: both;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+.footer-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-social li {
+  margin-right: 20px;
+}
+
+.fa {
+  font-size: 24px;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.fa:hover {
+  color: #ccc;
+}
+</style>
+<body>
+    <script>
+   
+const chart1 = document.getElementById('chart-1');
+
+
+
+const table1 = document.getElementById('table-1');
+
+
+const btns = document.querySelectorAll('.btn');
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+  
+    });
+});
+</script>
+   
+    <nav class="nav">
+        <div class="nav-brand">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="nav-profile">
+            <img src="profile-picture.png" alt="Profile Picture">
+            <ul class="nav-profile-links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <main class="main-content">
+       
+        <section class="widgets">
+            <div class="widget">
+                <h2>photo</h2>
+                <canvas id="chart-1"></canvas>
+            </div>
+            <div class="widget">
+                <h2>photo</h2>
+       
+            </div>
+            <div class="widget">
+                <h2>Alert 1</h2>
+                <p>This is an alert message.</p>
+            </div>
+        </section>
+
+       
+        <section class="kpi">
+            <div class="kpi-item">
+                <h2>KPI 1</h2>
+                <p>Value: 100</p>
+            </div>
+            <div class="kpi-item">
+                <h2>KPI 2</h2>
+                <p>Value: 200</p>
+            </div>
+            <div class="kpi-item">
+                <h2>KPI 3</h2>
+                <p>Value: 300</p>
+            </div>
+        </section>
+
+      
+        <section class="cta">
+            <button class="btn">Button 1</button>
+            <button class="btn">Button 2</button>
+            <button class="btn">Button 3</button>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2023 Company Name</p>
+        <ul class="footer-links">
+            <li><a href="#">Help and Support</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <ul class="footer-social">
+            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
